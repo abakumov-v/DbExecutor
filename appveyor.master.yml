@@ -40,8 +40,8 @@ build:
   verbosity: minimal
 
 artifacts:
-# - path: '**\*.nupkg'
- - path: DbExecutor.Abstract\bin\$(configuration)\**\*.nupkg
+ - path: '**\*.nupkg'
+# - path: DbExecutor.Abstract\bin\$(configuration)\**\*.nupkg
 
 deploy:
  - provider: NuGet
