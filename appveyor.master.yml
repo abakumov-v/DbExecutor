@@ -2,7 +2,7 @@
   version_suffix: alpha
   nuget_api_key: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
   
-version: 1.0.0-$(version_suffix){build}
+version: 1.0.{build}-$(version_suffix)
 
 # branches to build
 branches:
