@@ -1,2 +1,2 @@
 # DbExecutor
-Simple database executor wrapper
+Simple wrapper with its factory for working with database connections (for example, Dapper)
