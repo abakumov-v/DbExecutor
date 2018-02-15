@@ -1,6 +1,5 @@
 ﻿environment:
   version_suffix: alpha
-  nuget_api_key: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
   
 version: 1.0.0-$(version_suffix){build}
 
