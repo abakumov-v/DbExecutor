@@ -7,19 +7,20 @@
     <Authors>Abakumov Valeriy</Authors>
     <Company />
     <Product />
-    <Description>Simple wrapper with its factory for working with database connections (for example, Dapper)</Description>
+    <Description>Autofac registration module for DbExecutor and DbExecutorFactory</Description>
     <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
-    <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor</PackageTags>
+    <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor Autofac Ioc</PackageTags>
     <PackageVersion />
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DbConn.DbExecutor.Abstract\DbConn.DbExecutor.Abstract.csproj" />
+    <ProjectReference Include="..\DbConn.DbExecutor.Dapper\DbConn.DbExecutor.Dapper.csproj" />
   </ItemGroup>
 
 </Project>
