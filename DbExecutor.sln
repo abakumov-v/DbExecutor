@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbExecutor.Abstract", "DbExecutor.Abstract\DbExecutor.Abstract.csproj", "{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Abstract", "DbConn.DbExecutor.Abstract\DbConn.DbExecutor.Abstract.csproj", "{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58C157DC-689F-488A-A1D0-AD8F407D9FB8}"
 	ProjectSection(SolutionItems) = preProject
