@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DbExecutor
+﻿namespace DbConn.DbExecutor.Abstract
 {
     public class Class1
     {
