@@ -53,7 +53,7 @@ artifacts:
 notifications:
  - provider: Slack
    incoming_webhook: https://hooks.slack.com/services/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
-   channel: builds
+   channel: releases
    on_build_success: true
    on_build_failure: true
    on_build_status_changed: true
