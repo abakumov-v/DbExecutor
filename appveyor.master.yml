@@ -46,15 +46,6 @@ artifacts:
  - path: '**\*.nupkg'
 # - path: DbExecutor.Abstract\bin\$(configuration)\**\*.nupkg
 
-deploy:
- - provider: NuGet
-   name: production
-   server: 
-   api_key:
-    secure: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7 #'{nuget_api_key}'
-   skip_symbols: true
-   artifact: /.*\.nupkg/
-
 # Deploy to GitHub Releases
 # - provider: GitHub
 #   artifact: /.*\.nupkg/           # upload all NuGet packages to release assets

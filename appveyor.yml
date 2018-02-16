@@ -43,15 +43,6 @@ build:
 
 artifacts:
  - path: '**\*.nupkg'
-
-deploy:
- - provider: NuGet
-   name: dev
-   server: https://ci.appveyor.com/nuget/valeriy1991 # remove to push to NuGet.org
-   api_key:
-    secure: m9mXfgL3RpGeznuLZm94nyhU7+Awk2jr5eddNy8Sw8Y=
-   skip_symbols: true
-   artifact: /.*\.nupkg/
   
 # send notification to Slack about build results
 notifications:
