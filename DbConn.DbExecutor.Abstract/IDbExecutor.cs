@@ -4,6 +4,10 @@ using System.Data;
 
 namespace DbConn.DbExecutor.Abstract
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Wrapper for getting data and execute scripts for database
+    /// </summary>
     public interface IDbExecutor : IDisposable
     {
         IDbConnection InnerConnection { get; }
