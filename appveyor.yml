@@ -1,7 +1,7 @@
 ﻿environment:
   version_suffix: alpha
   
-version: 1.0.{build}-$(version_suffix)
+version: 1.0.0-$(version_suffix).{build}
 
 # branches to build
 branches:
