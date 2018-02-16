@@ -45,6 +45,27 @@ build:
 
 artifacts:
  - path: '**\*.nupkg' 
+
+deploy:
+ - provider: NuGet
+   name: production
+   server: 
+   api_key:
+    secure: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7 #'{nuget_api_key}'
+   skip_symbols: true
+   artifact: /.*\.nupkg/
+# Deploy to GitHub Releases
+ - provider: GitHub
+   name: production-GitHub
+   description: ''
+   artifact: /.*\.nupkg/           # upload all NuGet packages to release assets
+   draft: true
+   prerelease: true # TODO: (version_suffix != string.empty) ? true : false
+   auth_token:
+     secure: cXU/5uMu5hDP4h2I7NTHUQ4qaDY67P9hDwNVe2hwEijidAJXQe6zX1f1CInMYOcV
+   on:
+     branch: master                # release from master branch only
+     #appveyor_repo_tag: true       # deploy on tag push only 
   
 # send notification to Slack about build results
 notifications:

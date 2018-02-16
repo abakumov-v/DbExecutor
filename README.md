@@ -6,7 +6,7 @@ Simple wrapper with its factory for working with database connections (for examp
 
 Branch|Build status
 -|-
-master|[![Build status](https://ci.appveyor.com/api/projects/status/9mk8efhqwqqibgt5?svg=true)](https://ci.appveyor.com/project/Valeriy1991/dbexecutor)
+master|[![Build status](https://ci.appveyor.com/api/projects/status/9mk8efhqwqqibgt5/branch/master?svg=true)](https://ci.appveyor.com/project/Valeriy1991/dbexecutor)
 dev|[![Build status](https://ci.appveyor.com/api/projects/status/9mk8efhqwqqibgt5/branch/dev?svg=true)](https://ci.appveyor.com/project/Valeriy1991/dbexecutor/branch/dev)
 
 
