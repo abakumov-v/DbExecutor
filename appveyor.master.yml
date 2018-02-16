@@ -2,12 +2,15 @@
   version_suffix: alpha
   nuget_api_key: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
   
-version: 1.0.{build}-$(version_suffix)
+version: 1.0.0-$(version_suffix).{build}
 
 # branches to build
 branches:
   only:
   - master
+
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
 
 image: Visual Studio 2017
 
