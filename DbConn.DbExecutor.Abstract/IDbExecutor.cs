@@ -13,6 +13,8 @@ namespace DbConn.DbExecutor.Abstract
         IDbConnection InnerConnection { get; }
         IDbTransaction Transaction { get; }
 
+        void UseTransaction(IDbTransaction transaction);
+
         IEnumerable<TResult> Query<TResult>(string sql);
         IEnumerable<TResult> Query<TResult>(string sql, object param);
 
