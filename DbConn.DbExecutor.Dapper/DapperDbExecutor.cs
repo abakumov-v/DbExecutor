@@ -69,7 +69,14 @@ namespace DbConn.DbExecutor.Dapper
 
         public IDbConnection InnerConnection { get; }
 
-        public IDbTransaction Transaction { get; }
+        public IDbTransaction Transaction { get; private set; }
+
+        public void UseTransaction(IDbTransaction transaction)
+        {
+            if (transaction == null)
+                throw new ArgumentNullException(nameof(transaction));
+            Transaction = transaction;
+        }
 
         public IEnumerable<TResult> Query<TResult>(string sql)
         {

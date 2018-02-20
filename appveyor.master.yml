@@ -1,6 +1,5 @@
 ﻿environment:
   version_suffix: alpha
-  nuget_api_key: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
   
 version: 1.0.1-$(version_suffix){build}
 
@@ -51,10 +50,10 @@ deploy:
    name: production
    server: 
    api_key:
-    secure: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7 #'{nuget_api_key}'
+    secure: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
    skip_symbols: true
    artifact: /.*\.nupkg/
-# Deploy to GitHub Releases
+
  - provider: GitHub
    name: production-GitHub
    description: ''
