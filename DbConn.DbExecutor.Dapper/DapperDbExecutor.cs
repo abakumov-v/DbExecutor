@@ -34,7 +34,7 @@ namespace DbConn.DbExecutor.Dapper
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
-        public void Dispose()
+        public virtual void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
@@ -92,23 +92,23 @@ namespace DbConn.DbExecutor.Dapper
 
         #region Execute
 
-        public void Execute(string sql)
+        public virtual void Execute(string sql)
         {
             InnerConnection.Execute(sql, transaction: Transaction);
         }
 
-        public void Execute(string sql, object param, CommandType? commandType = default(CommandType?),
+        public virtual void Execute(string sql, object param, CommandType? commandType = default(CommandType?),
             int? commandTimeout = default(int?))
         {
             InnerConnection.Execute(sql, param, Transaction, commandTimeout, commandType);
         }
 
-        public void Commit()
+        public virtual void Commit()
         {
             Transaction?.Commit();
         }
 
-        public void Rollback()
+        public virtual void Rollback()
         {
             Transaction?.Rollback();
         }
