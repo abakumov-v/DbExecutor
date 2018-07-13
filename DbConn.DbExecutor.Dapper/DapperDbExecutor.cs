@@ -84,15 +84,24 @@ namespace DbConn.DbExecutor.Dapper
             return InnerConnection.Query<TResult>(sql, transaction: Transaction);
         }
 
+        public Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql)
+        {
+            return InnerConnection.QueryAsync<TResult>(sql, transaction: Transaction);
+        }
+
         public IEnumerable<TResult> Query<TResult>(string sql, object param)
         {
             return InnerConnection.Query<TResult>(sql, param, Transaction);
+        }
+        public Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql, object param)
+        {
+            return InnerConnection.QueryAsync<TResult>(sql, param, Transaction);
         }
 
         #endregion
 
         #region Execute
-        
+
         public virtual void Execute(string sql, object param = null, 
             CommandType? commandType = default(CommandType?),
             int? commandTimeout = default(int?))
