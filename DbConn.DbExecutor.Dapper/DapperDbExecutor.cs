@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using Dapper;
 using DbConn.DbExecutor.Abstract;
 
@@ -83,24 +84,36 @@ namespace DbConn.DbExecutor.Dapper
             return InnerConnection.Query<TResult>(sql, transaction: Transaction);
         }
 
+        public Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql)
+        {
+            return InnerConnection.QueryAsync<TResult>(sql, transaction: Transaction);
+        }
+
         public IEnumerable<TResult> Query<TResult>(string sql, object param)
         {
             return InnerConnection.Query<TResult>(sql, param, Transaction);
+        }
+        public Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql, object param)
+        {
+            return InnerConnection.QueryAsync<TResult>(sql, param, Transaction);
         }
 
         #endregion
 
         #region Execute
 
-        public virtual void Execute(string sql)
-        {
-            InnerConnection.Execute(sql, transaction: Transaction);
-        }
-
-        public virtual void Execute(string sql, object param, CommandType? commandType = default(CommandType?),
+        public virtual void Execute(string sql, object param = null, 
+            CommandType? commandType = default(CommandType?),
             int? commandTimeout = default(int?))
         {
             InnerConnection.Execute(sql, param, Transaction, commandTimeout, commandType);
+        }
+
+        public virtual Task<int> ExecuteAsync(string sql, object param = null,
+            CommandType? commandType = default(CommandType?),
+            int? commandTimeout = default(int?))
+        {
+            return InnerConnection.ExecuteAsync(sql, param, Transaction, commandTimeout, commandType);
         }
 
         public virtual void Commit()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace DbConn.DbExecutor.Abstract
 {
@@ -16,10 +17,16 @@ namespace DbConn.DbExecutor.Abstract
         void UseTransaction(IDbTransaction transaction);
 
         IEnumerable<TResult> Query<TResult>(string sql);
-        IEnumerable<TResult> Query<TResult>(string sql, object param);
+        Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql);
 
-        void Execute(string sql);
-        void Execute(string sql, object param, CommandType? commandType = default(CommandType?), int? commandTimeout = default(int?));
+        IEnumerable<TResult> Query<TResult>(string sql, object param);
+        Task<IEnumerable<TResult>> QueryAsync<TResult>(string sql, object param);
+
+        void Execute(string sql, object param = null, CommandType? commandType = default(CommandType?),
+            int? commandTimeout = default(int?));
+
+        Task<int> ExecuteAsync(string sql, object param = null, CommandType? commandType = default(CommandType?),
+            int? commandTimeout = default(int?));
 
         void Commit();
         void Rollback();
