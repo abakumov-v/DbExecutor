@@ -6,7 +6,7 @@ DbConn.DbExecutor.Abstract|[![NuGet Pre Release](https://img.shields.io/nuget/vp
 DbConn.DbExecutor.Dapper|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper/)
 DbConn.DbExecutor.Dapper.Ioc.Autofac|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.Ioc.Autofac.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Ioc.Autofac/)
 
-Simple wrapper with factory for working with database connections (for example, Dapper)
+Simple wrapper with factory for working with database connections via Dapper
 
 ## Builds
 
@@ -26,7 +26,8 @@ Project|Dependency
 -|-
 DbConn.DbExecutor.Abstract|*No*
 DbConn.DbExecutor.Dapper|[Dapper](https://github.com/StackExchange/Dapper)
-DbConn.DbExecutor.Dapper.Ioc.Autofac|[Autofac.Extensions.DependencyInjection](https://github.com/autofac/Autofac.Extensions.DependencyInjection)
+DbConn.DbExecutor.Dapper.Ioc.Autofac|[Dapper](https://github.com/StackExchange/Dapper), [Autofac.Extensions.DependencyInjection](https://github.com/autofac/Autofac.Extensions.DependencyInjection)
+DbConn.DbExecutor.Dapper.Npgsql|[Dapper](https://github.com/StackExchange/Dapper), [Npgsql](https://github.com/npgsql/npgsql)
 
 ## How to use
 
@@ -41,7 +42,7 @@ Install-Package DbConn.DbExecutor.Abstract
 
 ### 2. Implementations
 
-#### 2.1. Dapper
+#### 2.1. SQL Server (as default)
 
 1. Install from NuGet:
 ```
@@ -137,6 +138,9 @@ And `appsettings.json`:
 ### 2.2 Dependency injection & IoC
 
 #### Autofac
+
+##### 1) SQL Server (default)
+
 1. Install from NuGet:
 ```
 Install-Package DbConn.DbExecutor.Dapper.Ioc.Autofac
@@ -144,4 +148,17 @@ Install-Package DbConn.DbExecutor.Dapper.Ioc.Autofac
 2. This package have an Autofac registration module with name `DbExecutorRegistrationModule`. Just create new instanse of this class when you call `RegisterModule` method of Autofac `ContainerBuilder`:
 ```csharp
 builder.RegisterModule(new DbExecutorRegistrationModule());
+```
+
+##### 2) PostgreSQL
+
+Just add this code:
+```csharp
+builder.RegisterType<DapperDbExecutorFactory>()
+    .As<IDbExecutorFactory>()
+    .InstancePerLifetimeScope();
+
+builder.RegisterType<DapperDbExecutor>()
+    .As<IDbExecutor>()
+    .InstancePerLifetimeScope();
 ```
