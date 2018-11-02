@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <VersionSuffix>alpha</VersionSuffix>
+    <Authors>Abakumov Valeriy</Authors>
+    <Company />
+    <Product />
+    <Description>Simple wrapper with its factory for working with PostgreSQL database connections by Dapper and Npgsql</Description>
+    <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
+    <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor Npgsql</PackageTags>
+    <PackageVersion />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Npgsql" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DbConn.DbExecutor.Abstract\DbConn.DbExecutor.Abstract.csproj" />
+  </ItemGroup>
+
+</Project>
