@@ -7,7 +7,7 @@
     <Authors>Abakumov Valeriy</Authors>
     <Company />
     <Product />
-    <Description>Autofac registration module for DbExecutor and DbExecutorFactory</Description>
+    <Description>**OBSOLETE**. You must implement it manually in your IoC-container. ~~Autofac registration module for DbExecutor and DbExecutorFactory~~</Description>
     <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
     <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor Autofac Ioc</PackageTags>
