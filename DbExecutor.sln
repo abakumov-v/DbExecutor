@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Np
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConn.DbExecutor.Dapper.Sqlite", "DbConn.DbExecutor.Dapper.Sqlite\DbConn.DbExecutor.Dapper.Sqlite.csproj", "{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConn.DbExecutor.Dapper.SqlServer", "DbConn.DbExecutor.Dapper.SqlServer\DbConn.DbExecutor.Dapper.SqlServer.csproj", "{94F1A675-AD31-4925-BFCA-CEDE4189F594}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F1A675-AD31-4925-BFCA-CEDE4189F594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F1A675-AD31-4925-BFCA-CEDE4189F594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F1A675-AD31-4925-BFCA-CEDE4189F594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F1A675-AD31-4925-BFCA-CEDE4189F594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

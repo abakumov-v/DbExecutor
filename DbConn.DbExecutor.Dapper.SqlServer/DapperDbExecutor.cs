@@ -8,7 +8,6 @@ using DbConn.DbExecutor.Abstract;
 
 namespace DbConn.DbExecutor.Dapper
 {
-    [Obsolete("Use the same class from package \"DbConn.DbExecutor.Dapper.SqlServer\"")]
     public class DapperDbExecutor : IDbExecutor
     {
         private bool _isDisposed;

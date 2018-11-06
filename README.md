@@ -3,8 +3,11 @@
 Package|Last version
 -|-
 DbConn.DbExecutor.Abstract|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Abstract/)
-DbConn.DbExecutor.Dapper|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper/)
-DbConn.DbExecutor.Dapper.Ioc.Autofac|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.Ioc.Autofac.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Ioc.Autofac/)
+[**OBSOLETE** - you must use DbConn.DbExecutor.Dapper.SqlServer instead] ~~DbConn.DbExecutor.Dapper~~ |[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper/)
+[**OBSOLETE** - you must implement manually] ~~DbConn.DbExecutor.Dapper.Ioc.Autofac~~ |[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.Ioc.Autofac.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Ioc.Autofac/)
+DbConn.DbExecutor.Dapper.Npgsql|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Npgsql/)
+DbConn.DbExecutor.Dapper.Sqlite|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Sqlite/)
+DbConn.DbExecutor.Dapper.SqlServer|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.SqlServer/)
 
 Simple wrapper with factory for working with database connections via Dapper
 
@@ -16,7 +19,6 @@ master|[![Build status](https://ci.appveyor.com/api/projects/status/2fsh97gw8nrw
 dev|[![Build status](https://ci.appveyor.com/api/projects/status/9mk8efhqwqqibgt5/branch/dev?svg=true)](https://ci.appveyor.com/project/Valeriy1991/dbexecutor/branch/dev)
 
 
-
 AppVeyor Nuget project feed: 
 https://ci.appveyor.com/nuget/dbexecutor-q2ir84d55gwi
 
@@ -25,9 +27,9 @@ https://ci.appveyor.com/nuget/dbexecutor-q2ir84d55gwi
 Project|Dependency
 -|-
 DbConn.DbExecutor.Abstract|*No*
-DbConn.DbExecutor.Dapper|[Dapper](https://github.com/StackExchange/Dapper)
-DbConn.DbExecutor.Dapper.Ioc.Autofac|[Dapper](https://github.com/StackExchange/Dapper), [Autofac.Extensions.DependencyInjection](https://github.com/autofac/Autofac.Extensions.DependencyInjection)
 DbConn.DbExecutor.Dapper.Npgsql|[Dapper](https://github.com/StackExchange/Dapper), [Npgsql](https://github.com/npgsql/npgsql)
+DbConn.DbExecutor.Dapper.Sqlite|[Dapper](https://github.com/StackExchange/Dapper), [Microsoft.Data.Sqlite](https://docs.microsoft.com/en-us/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0)
+DbConn.DbExecutor.Dapper.SqlServer|[Dapper](https://github.com/StackExchange/Dapper), System.Data.SqlClient
 
 ## How to use
 
@@ -42,11 +44,11 @@ Install-Package DbConn.DbExecutor.Abstract
 
 ### 2. Implementations
 
-#### 2.1. SQL Server (as default)
+#### 2.1. SQL Server
 
 1. Install from NuGet:
 ```
-Install-Package DbConn.DbExecutor.Dapper
+Install-Package DbConn.DbExecutor.Dapper.SqlServer
 ```
 
 2. After you can use `DapperDbExecutor` and `DapperDbExecutorFactory` 
@@ -139,20 +141,8 @@ And `appsettings.json`:
 
 #### Autofac
 
-##### 1) SQL Server (default)
-
-1. Install from NuGet:
-```
-Install-Package DbConn.DbExecutor.Dapper.Ioc.Autofac
-```
-2. This package have an Autofac registration module with name `DbExecutorRegistrationModule`. Just create new instanse of this class when you call `RegisterModule` method of Autofac `ContainerBuilder`:
-```csharp
-builder.RegisterModule(new DbExecutorRegistrationModule());
-```
-
-##### 2) PostgreSQL
-
 Just add this code:
+
 ```csharp
 builder.RegisterType<DapperDbExecutorFactory>()
     .As<IDbExecutorFactory>()
@@ -162,3 +152,6 @@ builder.RegisterType<DapperDbExecutor>()
     .As<IDbExecutor>()
     .InstancePerLifetimeScope();
 ```
+
+where `DapperDbExecutorFactory` and `DapperDbExecutor` classes are comes from
+the package you need (for MS SQL Server, PostgreSQL, SQLite).

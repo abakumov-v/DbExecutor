@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using DbConn.DbExecutor.Abstract;
 
-namespace DbConn.DbExecutor.Dapper.Fakes
+namespace DbConn.DbExecutor.Dapper.SqlServer.Fakes
 {
-    [Obsolete("Use the same class from package \"DbConn.DbExecutor.Dapper.SqlServer\"")]
     public class FakeDbExecutorFactory : IDbExecutorFactory
     {
         private readonly string _connectionString;
