@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
 using DbConn.DbExecutor.Abstract;
+using Microsoft.Data.Sqlite;
 
-namespace DbConn.DbExecutor.Dapper
+namespace DbConn.DbExecutor.Dapper.Sqlite
 {
-    [Obsolete("Use the same class from package \"DbConn.DbExecutor.Dapper.SqlServer\"")]
     public class DapperDbExecutor : IDbExecutor
     {
         private bool _isDisposed;
@@ -19,7 +18,7 @@ namespace DbConn.DbExecutor.Dapper
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
 
-            InnerConnection = new SqlConnection(connectionString);
+            InnerConnection = new SqliteConnection(connectionString);
             InnerConnection.Open();
             if (isNeedTransactional)
             {
@@ -103,7 +102,7 @@ namespace DbConn.DbExecutor.Dapper
 
         #region Execute
 
-        public virtual void Execute(string sql, object param = null, 
+        public virtual void Execute(string sql, object param = null,
             CommandType? commandType = default(CommandType?),
             int? commandTimeout = default(int?))
         {

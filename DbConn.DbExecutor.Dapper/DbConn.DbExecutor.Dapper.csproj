@@ -7,7 +7,7 @@
     <Authors>Abakumov Valeriy</Authors>
     <Company />
     <Product />
-    <Description>Simple wrapper with its factory for working with database connections (for example, Dapper)</Description>
+    <Description>OBSOLETE. You must use DbConn.DbExecutor.Dapper.SqlServer package</Description>
     <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
     <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor</PackageTags>

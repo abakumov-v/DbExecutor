@@ -1,10 +1,8 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using DbConn.DbExecutor.Abstract;
 
-namespace DbConn.DbExecutor.Dapper
+namespace DbConn.DbExecutor.Dapper.Sqlite
 {
-    [Obsolete("Use the same class from package \"DbConn.DbExecutor.Dapper.SqlServer\"")]
     public class DapperDbExecutorFactory : IDbExecutorFactory
     {
         /// <summary>

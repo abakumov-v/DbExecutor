@@ -7,20 +7,20 @@
     <Authors>Abakumov Valeriy</Authors>
     <Company />
     <Product />
-    <Description>OBSOLETE. You must implement it manually in your IoC-container</Description>
+    <Description>Simple wrapper with its factory for working with SQLite database connections by Dapper</Description>
     <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
-    <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor Autofac Ioc</PackageTags>
+    <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor SQLite</PackageTags>
     <PackageVersion />
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DbConn.DbExecutor.Abstract\DbConn.DbExecutor.Abstract.csproj" />
-    <ProjectReference Include="..\DbConn.DbExecutor.Dapper\DbConn.DbExecutor.Dapper.csproj" />
   </ItemGroup>
 
 </Project>
