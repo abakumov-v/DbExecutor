@@ -50,7 +50,7 @@ deploy:
    name: production
    server: 
    api_key:
-    secure: hCYZb1qY+PIMKQZ21VS2lkCBSvrEUzFvEXrV/mTmpa+f5DDh4YtGowrmOAhpVrD7
+    secure: ekIWKtsfXlEa1/OrcPiHzvtpHhXNbDA7VcA8OoMv1koBZbbDA6JdzGlBB/j6lL60
    skip_symbols: true
    artifact: /.*\.nupkg/
 
