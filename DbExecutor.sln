@@ -18,9 +18,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Io
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Npgsql", "DbConn.DbExecutor.Dapper.Npgsql\DbConn.DbExecutor.Dapper.Npgsql.csproj", "{2E5E06A5-F5DE-4008-A96D-14A97E99F90F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConn.DbExecutor.Dapper.Sqlite", "DbConn.DbExecutor.Dapper.Sqlite\DbConn.DbExecutor.Dapper.Sqlite.csproj", "{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Sqlite", "DbConn.DbExecutor.Dapper.Sqlite\DbConn.DbExecutor.Dapper.Sqlite.csproj", "{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConn.DbExecutor.Dapper.SqlServer", "DbConn.DbExecutor.Dapper.SqlServer\DbConn.DbExecutor.Dapper.SqlServer.csproj", "{94F1A675-AD31-4925-BFCA-CEDE4189F594}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.SqlServer", "DbConn.DbExecutor.Dapper.SqlServer\DbConn.DbExecutor.Dapper.SqlServer.csproj", "{94F1A675-AD31-4925-BFCA-CEDE4189F594}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB64306B-2E0B-4799-B7DA-BFE3A26E2874}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
+		{9C746078-2174-4DBD-AA5C-A173957CDEA0} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
+		{A47809B8-0E65-4A2B-A36A-C5D2157E661C} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
+		{2E5E06A5-F5DE-4008-A96D-14A97E99F90F} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
+		{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
+		{94F1A675-AD31-4925-BFCA-CEDE4189F594} = {AB64306B-2E0B-4799-B7DA-BFE3A26E2874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C29CBB4F-7AF8-4469-819F-E8D5AD5DFEE1}
