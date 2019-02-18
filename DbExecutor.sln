@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper", "DbConn.DbExecutor.Dapper\DbConn.DbExecutor.Dapper.csproj", "{9C746078-2174-4DBD-AA5C-A173957CDEA0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Ioc.Autofac", "DbConn.DbExecutor.Dapper.Ioc.Autofac\DbConn.DbExecutor.Dapper.Ioc.Autofac.csproj", "{A47809B8-0E65-4A2B-A36A-C5D2157E661C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.DbExecutor.Dapper.Npgsql", "DbConn.DbExecutor.Dapper.Npgsql\DbConn.DbExecutor.Dapper.Npgsql.csproj", "{2E5E06A5-F5DE-4008-A96D-14A97E99F90F}"
@@ -28,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapper", "Dapper", "{850063
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFrameworkCore", "EntityFrameworkCore", "{F6B99811-D10B-4470-84CF-50C445B640AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConn.EntityFrameworkCore.Abstract", "DbConn.EntityFrameworkCore.Abstract\DbConn.EntityFrameworkCore.Abstract.csproj", "{952F6722-0B1B-4A55-A2C6-AD1FE4838EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConn.EntityFrameworkCore.Abstract", "DbConn.EntityFrameworkCore.Abstract\DbConn.EntityFrameworkCore.Abstract.csproj", "{952F6722-0B1B-4A55-A2C6-AD1FE4838EE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +38,6 @@ Global
 		{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C746078-2174-4DBD-AA5C-A173957CDEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C746078-2174-4DBD-AA5C-A173957CDEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C746078-2174-4DBD-AA5C-A173957CDEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C746078-2174-4DBD-AA5C-A173957CDEA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A47809B8-0E65-4A2B-A36A-C5D2157E661C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A47809B8-0E65-4A2B-A36A-C5D2157E661C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A47809B8-0E65-4A2B-A36A-C5D2157E661C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,7 +64,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A677DC1C-9B69-43FD-BD1D-3A77E842DAEA} = {850063A5-A1ED-4C44-A176-7668A56FB699}
-		{9C746078-2174-4DBD-AA5C-A173957CDEA0} = {850063A5-A1ED-4C44-A176-7668A56FB699}
 		{A47809B8-0E65-4A2B-A36A-C5D2157E661C} = {850063A5-A1ED-4C44-A176-7668A56FB699}
 		{2E5E06A5-F5DE-4008-A96D-14A97E99F90F} = {850063A5-A1ED-4C44-A176-7668A56FB699}
 		{B39C26AC-DB1A-4FB6-807B-FB361E3C6DA5} = {850063A5-A1ED-4C44-A176-7668A56FB699}
