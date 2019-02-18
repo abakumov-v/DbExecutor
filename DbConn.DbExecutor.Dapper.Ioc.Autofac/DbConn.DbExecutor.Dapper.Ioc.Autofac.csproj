@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,7 +7,7 @@
     <Authors>Abakumov Valeriy</Authors>
     <Company />
     <Product />
-    <Description>OBSOLETE. You must implement it manually in your IoC-container</Description>
+    <Description>Autofac registration modules for IDbExecutor and IDbExecutorFactory (for multiple SQL providers)</Description>
     <PackageProjectUrl>https://github.com/Valeriy1991/DbExecutor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Valeriy1991/DbExecutor</RepositoryUrl>
     <PackageTags>Database DB Dapper SQL Wrapper DbConn DbExecutor Autofac Ioc</PackageTags>
