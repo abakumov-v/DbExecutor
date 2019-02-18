@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using DbConn.DbExecutor.Abstract;
 
-namespace DbConn.DbExecutor.Dapper
+namespace DbConn.DbExecutor.Dapper.SqlServer
 {
     public class DapperDbExecutor : IDbExecutor
     {
