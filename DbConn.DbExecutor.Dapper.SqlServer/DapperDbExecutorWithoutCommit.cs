@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace DbConn.DbExecutor.Dapper
+namespace DbConn.DbExecutor.Dapper.SqlServer
 {
     /// <summary>
     /// Dapper DB-executor without real commit transaction

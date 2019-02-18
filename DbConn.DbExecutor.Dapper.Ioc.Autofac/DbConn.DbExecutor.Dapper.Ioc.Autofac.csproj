@@ -20,7 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DbConn.DbExecutor.Abstract\DbConn.DbExecutor.Abstract.csproj" />
-    <ProjectReference Include="..\DbConn.DbExecutor.Dapper\DbConn.DbExecutor.Dapper.csproj" />
+    <ProjectReference Include="..\DbConn.DbExecutor.Dapper.Npgsql\DbConn.DbExecutor.Dapper.Npgsql.csproj" />
+    <ProjectReference Include="..\DbConn.DbExecutor.Dapper.Sqlite\DbConn.DbExecutor.Dapper.Sqlite.csproj" />
+    <ProjectReference Include="..\DbConn.DbExecutor.Dapper.SqlServer\DbConn.DbExecutor.Dapper.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

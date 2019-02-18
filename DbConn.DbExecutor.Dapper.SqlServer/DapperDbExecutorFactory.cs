@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using DbConn.DbExecutor.Abstract;
 
-namespace DbConn.DbExecutor.Dapper
+namespace DbConn.DbExecutor.Dapper.SqlServer
 {
     public class DapperDbExecutorFactory : IDbExecutorFactory
     {
