@@ -4,7 +4,7 @@ Package|Last version
 -|-
 DbConn.DbExecutor.Abstract|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Abstract/)
 [**OBSOLETE** - you must use DbConn.DbExecutor.Dapper.SqlServer instead] ~~DbConn.DbExecutor.Dapper~~ |[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper/)
-[**OBSOLETE** - you must implement manually] ~~DbConn.DbExecutor.Dapper.Ioc.Autofac~~ |[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.Ioc.Autofac.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Ioc.Autofac/)
+DbConn.DbExecutor.Dapper.Ioc.Autofac|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Dapper.Ioc.Autofac.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Ioc.Autofac/)
 DbConn.DbExecutor.Dapper.Npgsql|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Npgsql/)
 DbConn.DbExecutor.Dapper.Sqlite|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.Sqlite/)
 DbConn.DbExecutor.Dapper.SqlServer|[![NuGet Pre Release](https://img.shields.io/nuget/vpre/DbConn.DbExecutor.Abstract.svg)](https://www.nuget.org/packages/DbConn.DbExecutor.Dapper.SqlServer/)
@@ -30,6 +30,7 @@ DbConn.DbExecutor.Abstract|*No*
 DbConn.DbExecutor.Dapper.Npgsql|[Dapper](https://github.com/StackExchange/Dapper), [Npgsql](https://github.com/npgsql/npgsql)
 DbConn.DbExecutor.Dapper.Sqlite|[Dapper](https://github.com/StackExchange/Dapper), [Microsoft.Data.Sqlite](https://docs.microsoft.com/en-us/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0)
 DbConn.DbExecutor.Dapper.SqlServer|[Dapper](https://github.com/StackExchange/Dapper), System.Data.SqlClient
+DbConn.DbExecutor.Dapper.Ioc.Autofac|[Autofac.Extensions.DependencyInjection](https://github.com/autofac/Autofac.Extensions.DependencyInjection)
 
 ## How to use
 
@@ -51,8 +52,9 @@ Install-Package DbConn.DbExecutor.Abstract
 Install-Package DbConn.DbExecutor.Dapper.SqlServer
 ```
 
-2. After you can use `DapperDbExecutor` and `DapperDbExecutorFactory` 
-classes. For example (business component that creates user):
+2. After you can use `IDapperDbExecutor` and `IDapperDbExecutorFactory` 
+abstractions. For example (business component that creates user):
+
 ```csharp
 public class UserCreator
 {
@@ -141,7 +143,16 @@ And `appsettings.json`:
 
 #### Autofac
 
-Just add this code:
+Just install the `DbConn.DbExecutor.Dapper.Ioc.Autofac` package and this line:
+
+```csharp
+builder.RegisterModule(new DbExecutorRegistrationModule());
+```
+
+It will register implementations for `IDbExecutor` and `IDbExecutorFactory` for all
+SQL providers MS SQL Server, PostgreSQL, SQLite).
+
+Or you can register dependencies manually like this:
 
 ```csharp
 builder.RegisterType<DapperDbExecutorFactory>()
